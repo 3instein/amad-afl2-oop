@@ -69,7 +69,13 @@ while(shop){
                 }
                 
                 if(stock > 0){
-                    print("Hi, we have \(fnbs.count) Food and Beverage options for you!")
+                    var optionCount = 0
+                    for fnb in fnbs {
+                        if fnb.amount != 0 {
+                            optionCount+=1
+                        }
+                    }
+                    print("Hi, we have \(optionCount) Food and Beverage options for you!")
                     print("------------------------------------------------")
                     printFnbs()
                     print("[Q] Back to Main Menu")
